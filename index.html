@@ -81,7 +81,7 @@
     height: 60px;
   }
   bb {
-    width: 96px;
+    width: 120px;
     height: 8px;
     position: relative;
     z-index: 10;
@@ -92,14 +92,14 @@
     height: 40px;
     background: #b6a89d;
     position: relative;
-    animation: jump 1s ease-in-out alternate infinite;
+    animation: jump 0.8s ease-in-out alternate infinite;
   }
   @keyframes jump {
     0% {
       height: 10px;
     }
-    40% {
-      height: 80px;
+    100% {
+      height: 90px;
     }
   }
   bc::before,
@@ -223,7 +223,7 @@
     width: 80px;
     height: 80px;
     position: absolute;
-    background: white;
+    background: #f9b34e;
     content: "";
     top: 0;
     right: 0;
@@ -264,15 +264,16 @@
     margin-bottom: 10px;
     top: 80px;
     z-index: 120;
-    animation: shiftColor 500ms ease-in-out alternate infinite;
+    animation: shiftColor 2000ms ease-in-out alternate infinite;
   }
 
   button {
     margin-bottom: 20px;
+    background-color: #b6a89d;
   }
   @keyframes shiftColor {
     from {
-      color: #33bbaa;
+      color: #f9b34e;
     }
     to {
       color: white;
@@ -282,10 +283,11 @@
 <!-- <h1>Position Absolute</h1>
 <h2>Dikeroyok Position Absolute</h2> -->
 <sun></sun>
-<tree>
+<!--<tree>
   <lf></lf>
   <brc></brc>
-</tree>
+</tree>-->
+
 <html>
   <button>
     <a href="Bakso.html" style="text-decoration: none">
@@ -293,10 +295,11 @@
     </a>
   </button>
 </html>
-<tree r>
+
+<!--<tree r>
   <lf></lf>
   <brc></brc>
-</tree>
+</tree>-->
 
 <tc3></tc3>
 <tc2></tc2>
@@ -308,4 +311,3 @@
 <bt></bt>
 <bc></bc>
 <bb></bb>
-<gnd></gnd>
