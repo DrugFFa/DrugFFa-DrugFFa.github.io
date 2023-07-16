@@ -1,0 +1,311 @@
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    background: #056b98;
+    display: flex;
+    height: 100vh;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+  }
+  gnd {
+    background: #716861;
+    width: 100%;
+    height: 11px;
+    position: relative;
+    z-index: 10;
+  }
+  tree,
+  lf,
+  brc {
+    display: block;
+  }
+  tree {
+    position: absolute;
+    left: 14px;
+    bottom: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @keyframes treeanim {
+    from {
+      opacity: 0.5;
+      transform: rotate(0deg) translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(180deg) translateY(0);
+    }
+  }
+  [r] {
+    right: 18px;
+    left: initial;
+    bottom: 11px;
+  }
+  lf {
+    background: #35d3bf;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -15px;
+  }
+  lf::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #33bbaa;
+    position: absolute;
+    left: -8px;
+    border-radius: 100%;
+  }
+  lf::after {
+    content: "";
+    width: 6px;
+    height: 16px;
+    background: #9b4f17;
+    transform: rotate(45deg) translateX(-50%);
+    position: absolute;
+    left: calc(50% + 6px);
+    bottom: -2px;
+    z-index: 50;
+  }
+  brc {
+    position: relative;
+    z-index: 10;
+    background-color: #9b4f17;
+    width: 6px;
+    height: 60px;
+  }
+  bb {
+    width: 96px;
+    height: 8px;
+    position: relative;
+    z-index: 10;
+    background: #f3e3d0;
+  }
+  bc {
+    width: 144px;
+    height: 40px;
+    background: #b6a89d;
+    position: relative;
+    animation: jump 1s ease-in-out alternate infinite;
+  }
+  @keyframes jump {
+    0% {
+      height: 10px;
+    }
+    40% {
+      height: 80px;
+    }
+  }
+  bc::before,
+  bc::after {
+    content: "";
+    width: 64px;
+    height: 96;
+    background: #056b98;
+    position: absolute;
+    border-radius: 100%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  bc::after {
+    right: 0;
+    left: initial;
+    transform: translateX(50%);
+  }
+  bt {
+    background: #f3e3d0;
+    width: 160px;
+    height: 12px;
+  }
+  mb {
+    background: #b6a89d;
+    height: 4px;
+    width: 64px;
+  }
+  mbt {
+    background: #f3e3d0;
+    height: 8px;
+    width: 64px;
+  }
+  tw {
+    width: 24px;
+    height: 140px;
+    background: #e1e1e1;
+    position: relative;
+  }
+  tw::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background: #f5f5f5;
+    right: 0;
+  }
+  tb {
+    width: 64px;
+    height: 8px;
+    background: #f3e3d0;
+  }
+  tc1 {
+    width: 36px;
+    height: 36px;
+    background: #f9b34e;
+    border-radius: 100%;
+    margin-bottom: -12px;
+    position: relative;
+    z-index: -10;
+  }
+  tc1::after {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    border-radius: 4px;
+  }
+  tc2 {
+    width: 20px;
+    height: 28px;
+    background: #f9b34e;
+    border-radius: 12px;
+    margin-bottom: -12px;
+    position: relative;
+  }
+  tc2::after {
+    content: "";
+    width: 4px;
+    height: 16px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    border-radius: 4px;
+  }
+  tc3 {
+    width: 8px;
+    height: 16px;
+    border-radius: 4px;
+    background: #f9b34e;
+    margin-bottom: -4px;
+  }
+  sun {
+    width: 164px;
+    height: 164px;
+    background: #398aae;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    /**animation: dip 500ms ease alternate infinite;**/
+  }
+  sun::before {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    content: "";
+    top: 18px;
+    right: 18px;
+    border-radius: 100%;
+    background: #4d96b6;
+  }
+  sun::after {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background: white;
+    content: "";
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    top: 42px;
+    right: 42px;
+  }
+  @keyframes dip {
+    from {
+      opacity: 0.5;
+      transform: scale(90%);
+    }
+    to {
+      opacity: 1;
+      transform: scale(100%);
+    }
+  }
+  h1 {
+    font-size: 28px;
+    position: absolute;
+    z-index: 150;
+    font-family: sans-serif;
+    color: white;
+    top: 28px;
+    animation: shiftColor 300ms ease infinite alternate;
+  }
+  h2 {
+    font-size: 16px;
+    font-family: sans-serif;
+    position: absolute;
+    top: 80px;
+    z-index: 120;
+    animation: shiftColor 500ms ease-in-out alternate infinite;
+  }
+  h3 {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    top: 80px;
+    z-index: 120;
+    animation: shiftColor 500ms ease-in-out alternate infinite;
+  }
+
+  button {
+    margin-bottom: 20px;
+  }
+  @keyframes shiftColor {
+    from {
+      color: #33bbaa;
+    }
+    to {
+      color: white;
+    }
+  }
+</style>
+<!-- <h1>Position Absolute</h1>
+<h2>Dikeroyok Position Absolute</h2> -->
+<sun></sun>
+<tree>
+  <lf></lf>
+  <brc></brc>
+</tree>
+<html>
+  <button>
+    <a href="Bakso.html" style="text-decoration: none">
+      <h3>"Klik Disiniii"</h3>
+    </a>
+  </button>
+</html>
+<tree r>
+  <lf></lf>
+  <brc></brc>
+</tree>
+
+<tc3></tc3>
+<tc2></tc2>
+<tc1></tc1>
+<tb></tb>
+<tw></tw>
+<mbt></mbt>
+<mb></mb>
+<bt></bt>
+<bc></bc>
+<bb></bb>
+<gnd></gnd>
