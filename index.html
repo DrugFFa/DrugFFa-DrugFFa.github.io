@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daffa's Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header id ="header">
+        
+        <a href="#" class="logo"> Prrlx </a>
+        <ul>
+            <li><a href = "#" class="active">Home</a></li>
+            <li><a href = "#">About</a></li>
+            <li><a href = "#">Portofolio</a></li>
+            <li><a href = "#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>Wanna See Smth Cool ?</span>
+        <br>Here We Goo !
+        </h2>
+        <img src="img/bird1.png" id="bird1">
+        <img src="img/bird2.png" id="bird2">
+        <img src="img/forest.png" id="forest">
+        <a href="#" id="btn"> Explore Now </a>
+        <img src="img/rocks.png" id="rocks">
+        <img src="img/water.png" id="water">
+        
+    </section>
+
+    <div class="sec">
+        <center><h2 id="scroll">Keep Scrolling !!<br> You'll Find Sesepuh In the Earth's Core </h2></center>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto suscipit maiores et quidem tempora ipsam ea enim asperiores, obcaecati eos eius, veniam voluptas maxime, modi saepe qui consequatur. Nisi?</p>
+        <p>Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh,</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto suscipit maiores et quidem tempora ipsam ea enim asperiores, obcaecati eos eius, veniam voluptas maxime, modi saepe qui consequatur. Nisi?</p>
+        <p>Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh,</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto suscipit maiores et quidem tempora ipsam ea enim asperiores, obcaecati eos eius, veniam voluptas maxime, modi saepe qui consequatur. Nisi?</p>
+        <p>Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh, Ajarin dong Puh Sepuh,</p>
+    </div>
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let forest = document.getElementById('forest');
+        let rocks = document.getElementById('rocks');
+        let water = document.getElementById('water');
+        let header= document.getElementById('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+
+            text.style.top =  25 + value * -0.05 + '%';
+            bird1.style.top =  value * -1.5 + 'px';
+            bird1.style.left =  value * -2 + 'px';
+            bird2.style.top =  value * -1.5 + 'px';
+            bird2.style.left =  value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 +'px'
+            rocks.style.top =  value * -0.12 + 'px';
+            forest.style.top =  value * 0.25 + 'px';
+            header.style.top =  value * -0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
